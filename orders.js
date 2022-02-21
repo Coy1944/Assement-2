@@ -32,14 +32,14 @@
 //CODE HERE
 class Ticket {
     constructor(items, orderTime, customerId){
-        this.items = items
-        this.orderTime = orderTime
-        this.customerId = customerId
-        this.status = queued
+        this.items = items;
+        this.orderTime = orderTime;
+        this.customerId = customerId;
+        this.status = queued;
     }
 }
-updateStatus(newStatus) {
-    this.status = queued
+updateStatus(newStatus) ;{
+    this.status = newStatus
     console.log(`${this.customerID} and ${this.status}`)
 }
 
@@ -56,7 +56,7 @@ updateStatus(newStatus) {
 */
 
 //CODE HERE
-
+var firstTicket = new Ticket('pizza, bread, and soda', 703, "575");
 
 /*
     Call the `updateStatus` method on
@@ -65,3 +65,4 @@ updateStatus(newStatus) {
 */
 
 //CODE HERE
+firstTicket.updateStatus('cooking')

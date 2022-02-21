@@ -38,8 +38,6 @@ const cart = [
 const sum = [9.99, 8.99, 7.99].reduce((partialSum, a) => partialSum + a, 0);
 console.log(sum);
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -57,7 +55,14 @@ console.log(sum);
 */
 
 //CODE HERE
-const calcFinalPrice = (cartTotal, couponValue, tax) => cb()
+function calcFinalPrice(cartTotal, tax, couponValue) {
+    // this is the function body
+    console.log( "Final Bill!!");
+    const total = cartTotal * (1 + tax) -couponValue;
+    return total;
+  }
+  const myTotal = calcFinalPrice(100, .06, 2);
+  console.log(myTotal);
 
 
 //////////////////PROBLEM 3////////////////////
@@ -82,8 +87,14 @@ const calcFinalPrice = (cartTotal, couponValue, tax) => cb()
 
 /*
     TEXT ANSWER HERE
-
-*/
+what is the object is going to have it it
+//the cart that i will design will have the customers name because we need to know who the order is for.
+then will be and email so we can give updates on the order
+then weill have have address of the customer to see if delievery is an option
+we will hae a phone property becuase we want to call if any issues come up
+then finally we will have the total price so the customer will know what to pay.
+the first properties will be string with the final two be numbers
+i fell that this will benefit the customers with the cart page
 
 /*
     Now, create a customer object following your own
@@ -91,3 +102,10 @@ const calcFinalPrice = (cartTotal, couponValue, tax) => cb()
 */
 
 //CODE HERE
+const order = {
+    name: 'Jon Sno',
+    email: "jonsno@thewall.com",
+    address: "24 wall Drive",
+    phone: 867-5309,
+    total: 20
+};

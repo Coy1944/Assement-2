@@ -20,14 +20,14 @@
 */
 
 //CODE HERE
-Employee() {
+class Employee {
     constructor(name, shifts){
-        this.name = name
-        this.shifts = shifts
+        this.name = name;
+        this.shifts = shifts;
     
     }
     getSchedule() {
-        console.log(`${this.name} works on ${this.shifts}`)
+        console.log(`${this.name} works on ${this.shifts}`);
     }
 }
 
@@ -43,14 +43,14 @@ Employee() {
 */
 
 //CODE HERE
-
+var empOne = new Employee('Jess', 'weekday mornings, weekday afternoons');
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
 
 //CODE HERE
-
+empOne.getSchedule()
 
 /*
     Make a copy of the empOne object
@@ -65,8 +65,8 @@ Employee() {
 */
 
 //CODE HERE
-
-
+{ ...empOne }
+var empTwo = new Employee('Nick', 'weekday mornings, weekday afternoons');
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -92,7 +92,7 @@ Employee() {
 */
 
 //CODE HERE
-
+var manager = new Employee('Jess', 'weekday mornings, weekday afternoons');
 
 
 /*
@@ -107,7 +107,7 @@ Employee() {
 */
 
 //CODE HERE
-
+const cloneFood = { ... };
 
 /*
     Call the `getEmployees` method on the
@@ -115,7 +115,7 @@ Employee() {
 */
 
 //CODE HERE
-
+manager.getSchedule()
 /*
     Call the `addEmployee` method on the 
     `manager` object passing in the string 
@@ -123,7 +123,7 @@ Employee() {
 */
 
 //CODE HERE 
-
+manager.getSchedule()
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -131,3 +131,4 @@ Employee() {
 */
 
 //CODE HERE
+get empone

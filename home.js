@@ -23,7 +23,7 @@
 
 //CODE HERE
 const greetUser = (userName) => {
-    name = String(userName)
+    userName = String(userName)
     console.log (`Welcome back, ${userName}`)
 }
 
@@ -53,14 +53,23 @@ greetUser('Andrew')
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
+// use .includes
+const canWeDeliver = (zipcode) => {
+    let inZone = false
 
-function canWeDeliver(zipCode) {
-    for (let i = 0; i < arr.length;  i++)
-} if (arr[i] === 85205 || 85204 ||85203 || 85213 || 85206){
-console.log ("You're in our delivery zone!")
-} else {
-    console.log ("sorry, we can't deliver to that address")
+    deliveryAreaZipCodes.forEach((ele) => {
+        if(zipcode === ele) {
+            inZone = true
+        }
+    } )
+    if(inZone) {
+        return 'You are in our delivery zone'
+    } else {
+        return `Sorry, we can not deliver to that address`
+    }
 }
+console.log(canWeDeliver(85205))
+
 
 /* 
     Problem 2 Continued
@@ -80,6 +89,20 @@ console.log ("You're in our delivery zone!")
 */
 
 // CODE HERE
+
+
+const num = 85205;
+
+canWeDeliverTwo = function(num){
+   for(let i = 0; i < this.length; i++){
+      const el = this[i];
+      if(num === el){
+         return true;
+      };
+   };
+   return false;
+};
+console.log(deliveryAreaZipCodes.includes(num));
 
 
 //////////////////PROBLEM 3////////////////////
@@ -116,7 +139,8 @@ const deals = [
 */
 
 //CODE HERE
-
+deals[0].title = deals[0].title.replace(15, 10)
+console.log(deals[0].title)
 
 
 /*
@@ -131,5 +155,7 @@ const deals = [
     whitespace in this string, since it seems
     to be displaying wrong on the live site.
 */
-
+//use .trim
 //CODE HERE
+deals[1].desc = deals[1].desc.replace('March', 'April').trim()
+console.log(deals[1].desc)

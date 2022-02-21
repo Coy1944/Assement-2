@@ -31,6 +31,14 @@
 */
 
 //CODE HERE
+let pizza = {
+    name: 'Pepperoni',
+    price: 7.99,
+    category: 'entree',
+    popularity: 8,
+    rating: 4,
+    tags: ['pepperoni', 'cheese', 'kids', ]
+}  
 
 
 
@@ -43,7 +51,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +61,8 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1])
+console.log(pizza['tags'][1])
 
 /*
     Third, destructure the price off of the
@@ -63,7 +72,8 @@
 */
 
 //CODE HERE
-
+let {price}  = pizza
+console.log(price)
 
 /*
     Fourth, and last, destructure the category
@@ -73,7 +83,8 @@
 */
 
 //CODE HERE
-
+let {category} = pizza
+console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,7 +99,17 @@
 */
 
 //CODE HERE
-
+const foodArr = [
+    {
+      name: 'meatlover',
+      price: 8.99,
+      category: 'entree',
+      popularity: 5,
+      rating: 3,
+      tags: ['meatlover', 'veg', 'bigkids']
+  
+    }
+  ]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -104,11 +125,19 @@
 */
 
 //CODE HERE
+// let filterTag = 'meatlover'
+// const filteredFood = foodArr.filter((item) => {
+// //console.log(item, tags)
+// return item.tags.includes(filterTag)
+// })
+// console.log(filteredFood)
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
-
-
+const filteredFood = foodArr.filter(function (element) {
+    if (element.tags.includes('veg')) {
+        return element;
+    }
+})
+console.log(filteredFood)
 //////////////////PROBLEM 5////////////////////
 /* 
     Now let's write a function that's a little
@@ -141,7 +170,7 @@
         if it is, return objects whose value for the given
         property is greater than the `number` passed in
 
-        If the type isn't `below`, return objects whose
+        If the type is `below`, return objects whose
         value for the given property is less than the 
         `number` passed in
     
@@ -149,9 +178,22 @@
 */
 
 //CODE HERE
+function filterByProperty(property, number, type) {
+    let filterArray = foodArr.filter((element) => {
+        if (type === 'below') {
+            if (element[property] < number){
+              return element;
+            }
+        }
+        else if (type === 'above') {
+            if (element[property] > number){
+              return element;
+            }
+        }
+    });
 
-
-/*
+    return filterArray;
+/* =
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
 
@@ -159,3 +201,4 @@
 */
 
 //CODE HERE
+console.log(filterByProperty('popularity', 3, 'above'))
